@@ -1,0 +1,195 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:mime="http://schemas.xmlsoap.org/wsdl/mime/" xmlns:tns="http://localhost/webservice" xmlns:s="http://www.w3.org/2001/XMLSchema" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:tm="http://microsoft.com/wsdl/mime/textMatching/" xmlns:http="http://schemas.xmlsoap.org/wsdl/http/" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" targetNamespace="http://localhost/webservice" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Servicio Web de prueba</wsdl:documentation>
+  <wsdl:types>
+    <s:schema elementFormDefault="qualified" targetNamespace="http://localhost/webservice">
+      <s:element name="openConexion">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="error" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="openConexionResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="openConexionResult" type="s:boolean" />
+            <s:element minOccurs="0" maxOccurs="1" name="error" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="closeConexion">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="error" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="closeConexionResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="error" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="insertarDrugstore">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="Name" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="thelephone" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="insertarDrugstoreResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="insertarDrugstoreResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="personaRegistrada">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="Employee_Id" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="personaRegistradaResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="personaRegistradaResult" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+    </s:schema>
+  </wsdl:types>
+  <wsdl:message name="openConexionSoapIn">
+    <wsdl:part name="parameters" element="tns:openConexion" />
+  </wsdl:message>
+  <wsdl:message name="openConexionSoapOut">
+    <wsdl:part name="parameters" element="tns:openConexionResponse" />
+  </wsdl:message>
+  <wsdl:message name="closeConexionSoapIn">
+    <wsdl:part name="parameters" element="tns:closeConexion" />
+  </wsdl:message>
+  <wsdl:message name="closeConexionSoapOut">
+    <wsdl:part name="parameters" element="tns:closeConexionResponse" />
+  </wsdl:message>
+  <wsdl:message name="insertarDrugstoreSoapIn">
+    <wsdl:part name="parameters" element="tns:insertarDrugstore" />
+  </wsdl:message>
+  <wsdl:message name="insertarDrugstoreSoapOut">
+    <wsdl:part name="parameters" element="tns:insertarDrugstoreResponse" />
+  </wsdl:message>
+  <wsdl:message name="personaRegistradaSoapIn">
+    <wsdl:part name="parameters" element="tns:personaRegistrada" />
+  </wsdl:message>
+  <wsdl:message name="personaRegistradaSoapOut">
+    <wsdl:part name="parameters" element="tns:personaRegistradaResponse" />
+  </wsdl:message>
+  <wsdl:portType name="WebServicePruebaSoap">
+    <wsdl:operation name="openConexion">
+      <wsdl:input message="tns:openConexionSoapIn" />
+      <wsdl:output message="tns:openConexionSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="closeConexion">
+      <wsdl:input message="tns:closeConexionSoapIn" />
+      <wsdl:output message="tns:closeConexionSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="insertarDrugstore">
+      <wsdl:input message="tns:insertarDrugstoreSoapIn" />
+      <wsdl:output message="tns:insertarDrugstoreSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="personaRegistrada">
+      <wsdl:input message="tns:personaRegistradaSoapIn" />
+      <wsdl:output message="tns:personaRegistradaSoapOut" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="WebServicePruebaSoap" type="tns:WebServicePruebaSoap">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="openConexion">
+      <soap:operation soapAction="http://localhost/webservice/openConexion" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="closeConexion">
+      <soap:operation soapAction="http://localhost/webservice/closeConexion" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="insertarDrugstore">
+      <soap:operation soapAction="http://localhost/webservice/insertarDrugstore" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="personaRegistrada">
+      <soap:operation soapAction="http://localhost/webservice/personaRegistrada" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:binding name="WebServicePruebaSoap12" type="tns:WebServicePruebaSoap">
+    <soap12:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="openConexion">
+      <soap12:operation soapAction="http://localhost/webservice/openConexion" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="closeConexion">
+      <soap12:operation soapAction="http://localhost/webservice/closeConexion" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="insertarDrugstore">
+      <soap12:operation soapAction="http://localhost/webservice/insertarDrugstore" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="personaRegistrada">
+      <soap12:operation soapAction="http://localhost/webservice/personaRegistrada" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="WebServicePrueba">
+    <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Servicio Web de prueba</wsdl:documentation>
+    <wsdl:port name="WebServicePruebaSoap" binding="tns:WebServicePruebaSoap">
+      <soap:address location="http://localhost:50306/WebService1.asmx" />
+    </wsdl:port>
+    <wsdl:port name="WebServicePruebaSoap12" binding="tns:WebServicePruebaSoap12">
+      <soap12:address location="http://localhost:50306/WebService1.asmx" />
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>

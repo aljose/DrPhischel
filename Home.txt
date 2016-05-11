@@ -1,0 +1,20 @@
+¡Bienvenidos!
+
+A su disposición ponemos estas herramientas que esperamos les facilite algunos trámites como sacar una cita.
+Podrá poner el nombre del doctor que quiere que le atienda y sacar cita con él o ella sin necesidad de hacer filas.
+También podrá ver su historial médico, el cual tiene acceso a los medicamentos recetados por su doctor, a cualquier hora del día.
+
+¡Bienvenido!
+
+Gracias por escoger nuestros servicios, aquí encontrará una forma diferente de llevar su consultorio. 
+Le ofrecemos diferentes herramientas para una mejor atención de sus pacientes, desde un calendario con todas sus citas agendadas automáticamente,
+hasta un sistema para ver el historial de un paciente junto con las recetas preescritas anteriormente. 
+También puede agregar pacientes desde un documento de excel para ahorrarse la molestia de agregar muchos pacientes uno por uno, 
+eso sí, recuerde poner dicho documento con el formato correcto, sino no se registrarán sus clientes.
+
+¡Bienvenido!
+
+Le presentamos este servicio en el cual se podrán agregar especialidades médicas para ampliar su repertorio de doctores,
+ agregar pacientes, aceptar solicitudes de doctores dispuestos a usar nuestros servicios, ver el cobro mensual por doctor y
+sincronizar el inventario de medicamentos en las sucursales para estar al día con sus necesidades y comunicarlas  
+a los proveedores con anticipación.
